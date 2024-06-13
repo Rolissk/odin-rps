@@ -4,67 +4,32 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <title>Rock Paper Scissors</title>
+  <script src="script.js" defer></script>
+  <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-  <script>
-    function getComputerChoice() { /*Assign a choice for computer*/
-      let random = Math.floor(Math.random() * 3) + 1;
-      if (random == 1) {
-        computerChoice = "rock"
-      } else if (random == 2) {
-        computerChoice = "paper"
-      } else {
-        computerChoice = "scissors"
-      }
-      return computerChoice;
-    }
+  <header id="header">
 
-    function getHumanChoice() { /*Lets player choose*/
-      humanChoice = prompt("Please enter one  of the following: rock, paper or scissors");
-      humanChoice = humanChoice.toLowerCase();
-      if (humanChoice == "rock" || humanChoice == "paper" || humanChoice == "scissors") {
-        return humanChoice;
-      } else {
-        alert("Please enter a valid choice!")
-        getHumanChoice();
-      }
-    }
+  </header>
+  <div id="content">
 
-    function playRound(humanPick, computerPick) {
-      if ((humanPick == "rock" && computerPick == "scissors") || (humanPick == "paper" && computerPick == "rock") ||
-        (humanPick == "scissors" && computerPick == "paper")) { /*Checks for all win options*/
-        alert(`You have won! ${humanPick} beats ${computerPick}!`);
-        humanScore++;
-        return humanScore;
-      } else if (humanPick === computerPick) { /*checks if its a tie*/
-        alert("It`s a tie!")
-      } else { /*If not a win or tie, its a lose*/
-        alert(`You have lost! ${computerPick} beats ${humanPick}!`)
-        computerScore++;
-        return computerScore;
-      }
-    }
+    <h1>Rock Paper Scissors</h1>
+    <div id="buttons">
+      <button id="rBtn" type="button">Rock</button>
+      <button id="pBtn" type="button">Paper</button>
+      <button id="sBtn" type="button">Scissors</button>
+    </div>
+    <div id="resultBox">
+      <span id="roundResult">Pick your choice!</span>
+      <span id="plScore">Your score is 0 </span>
+      <span id="compScore">Computers score is 0</span>
+    </div>
+  </div>
+  <footer id="footer">
 
-    function playGame() {
-      getComputerChoice();
-      getHumanChoice();
-      console.log(humanChoice, computerChoice)
-      playRound(humanChoice, computerChoice)
-      console.log(`Scores: You - ${humanScore}, Computer - ${computerScore}`)
-    }
-
-    let humanScore = 0;
-    let computerScore = 0;
-    let humanChoice;
-    let computerChoice;
-    playGame();
-    playGame();
-    playGame();
-    playGame();
-    playGame();
-  </script>
+  </footer>
 </body>
 
 </html>
