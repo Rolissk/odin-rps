@@ -1,0 +1,118 @@
+* {
+  border: 0px solid red;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  overflow: hidden;
+  /*Stops the page from scrolling up or down*/
+}
+
+header,
+footer {
+  background-color: #262626;
+}
+
+header {
+  height: 5vh;
+}
+
+footer {
+  display: flex;
+  justify-content: center;
+  height: 5vh;
+  color: gray;
+
+}
+
+#content {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  background-image: url(images/background.jpg);
+  background-size: 90vh;
+}
+
+#middleContent {
+  display: flex;
+  flex-direction: column;
+  background-color: #595959;
+  height: 90vh;
+  box-shadow: 0 0 10vh black;
+}
+
+h1,
+h3,
+#middleContent>p {
+  display: flex;
+  justify-content: center;
+}
+
+#pickBox {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 60vh;
+}
+
+#scoreBox {
+  display: flex;
+  width: 70vh;
+  height: 10vh;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#imageBox {
+  display: flex;
+}
+
+#countDown {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 40vh;
+  width: 20vh;
+}
+
+.pickImage>img {
+  height: 40vh;
+  width: auto;
+}
+
+#buttons {
+  display: flex;
+  width: 100vh;
+  height: 17vh;
+  justify-content: space-around;
+  align-items: center;
+}
+
+#rBtn,
+#pBtn,
+#sBtn {
+  flex-shrink: 1;
+  height: 15vh;
+  width: 18vh;
+  object-fit: contain;
+  background-color: transparent;
+  background-size: cover;
+  color: transparent;
+  border: 0.3vh solid black;
+  background-position: center;
+}
+
+#rBtn {
+  background-image: url(./images/rock.png);
+}
+
+#pBtn {
+  background-image: url(./images/paper.png);
+}
+
+#sBtn {
+  background-image: url(./images/scissors.png);
+}

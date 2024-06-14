@@ -2,7 +2,8 @@ let humanScore = 0;
 let computerScore = 0;
 let humanChoice;
 let computerChoice;
-
+let pickPl;
+let pickPc;
 function getComputerChoice() { /*Assign a choice for computer*/
   let random = Math.floor(Math.random() * 3) + 1;
   if (random == 1) {
@@ -24,51 +25,63 @@ buttons.addEventListener("click", (event) => {
       humanChoice = "rock";
       getComputerChoice();
       playRound(humanChoice, computerChoice);
-      console.log(humanChoice, computerChoice);
-      console.log(`Scores: You - ${humanScore}, Computer - ${computerScore}`)
       break;
     case "pBtn":
       humanChoice = "paper";
       getComputerChoice();
+      document.getElementById('playerPic').src = `${humanChoice}.png`;
       playRound(humanChoice, computerChoice);
-      console.log(humanChoice, computerChoice);
-      console.log(`Scores: You - ${humanScore}, Computer - ${computerScore}`)
       break;
     case "sBtn":
       humanChoice = "scissors";
       getComputerChoice();
+      document.getElementById('playerPic').src = `${humanChoice}.png`;
       playRound(humanChoice, computerChoice);
-      console.log(humanChoice, computerChoice);
-      console.log(`Scores: You - ${humanScore}, Computer - ${computerScore}`)
       break;
   }
 })
 
-
 function playRound(humanPick, computerPick) {
   if ((humanPick == "rock" && computerPick == "scissors") || (humanPick == "paper" && computerPick == "rock") ||
-    (humanPick == "scissors" && computerPick == "paper")) { /*Checks for all win options*/
-    const result = document.querySelector("#roundResult");
-    result.textContent = `Your pick: ${humanChoice} VS computers pick: ${computerChoice}`;
+    (humanPick == "scissors" && computerPick == "paper")) {
+    changeImage(playerPic, humanChoice);/*sitaa funkcija*/
     humanScore++;
-    const playerScore = document.querySelector("#plScore");
-    playerScore.textContent = `Your score is ${humanScore}`
+    updateScore();
+    /* pop up pazinojums par uzvaru - jauztaisa*/
     if (humanScore === 5) {
       alert(`You have won the game!`)
+      humanScore = 0;
+      computerScore = 0;
+      updateScore();
     }
     return humanScore;
-  } else if (humanPick === computerPick) { /*checks if its a tie*/
-    const result = document.querySelector("#roundResult");
-    result.textContent = `Your pick: ${humanChoice} VS computers pick: ${computerChoice}`;
-  } else { /*If not a win or tie, its a lose*/
-    const result = document.querySelector("#roundResult");
-    result.textContent = `Your pick: ${humanChoice} VS computers pick: ${computerChoice}`;
+  } else if (humanPick === computerPick) {
+    /* pop up pazinojums par neizskirtu - jauztaisa*/
+  } else {
     computerScore++;
-    const compScore = document.querySelector("#compScore");
-    compScore.textContent = `Computers score is ${computerScore}`
+    updateScore();
+    /* pop up pazinojums par zaudejumu - jauztaisa*/
     if (computerScore === 5) {
       alert(`Computer has won the game!`)
+      humanScore = 0;
+      computerScore = 0;
+      updateScore();
     }
     return computerScore;
   }
+}
+
+function updateScore() {
+  const playerScore = document.querySelector("#plScore");
+  playerScore.textContent = `You: ${humanScore}`
+  const compScore = document.querySelector("#compScore");
+  compScore.textContent = `Computer: ${computerScore}`
+}
+
+function changeImage(target, image) { /* seit taa funckija */
+  document.querySelector(`#${target}`).src = `./images/${image}.png`
+}
+function countDown() {
+  /*When player picks his choice then fighting smoke effect covers the pick box and 
+  numbers on top of that image count down from 3 and on 0 picks and winner is revealed */
 }

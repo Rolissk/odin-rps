@@ -6,29 +6,41 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Rock Paper Scissors</title>
   <script src="script.js" defer></script>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
-  <header id="header">
+  <header>
 
   </header>
   <div id="content">
-
-    <h1>Rock Paper Scissors</h1>
-    <div id="buttons">
-      <button id="rBtn" type="button">Rock</button>
-      <button id="pBtn" type="button">Paper</button>
-      <button id="sBtn" type="button">Scissors</button>
-    </div>
-    <div id="resultBox">
-      <span id="roundResult">Pick your choice!</span>
-      <span id="plScore">Your score is 0 </span>
-      <span id="compScore">Computers score is 0</span>
+    <div id="middleContent">
+      <h1>Rock Paper Scissors</h1>
+      <h3>This is a game of Rock Paper Scissors!</h3>
+      <p>Rules are simple! Pick one of three options.</p>
+      <p>Rock beats Scissors, Paper beats Rock and Scissors beat Paper!</p>
+      <div id="pickBox">
+        <div id="scoreBox">
+          <span id="plScore">You: 0 </span>
+          <span id="compScore">Computer: 0</span>
+        </div>
+        <div id="imageBox">
+          <div id="playerPic" class="pickImage"><img src=./images/questionMark.png alt="Question mark"></div>
+          <p id="countDown">VS</p>
+          <div id="compPic" class="pickImage"><img src=./images/questionMark.png alt="Question mark"></div>
+          <!--Pics of player and computer choices with VS in between and when player picks
+      then a countdown from 3 begins and on 0 computers choice is revealed -->
+        </div>
+      </div>
+      <div id="buttons">
+        <button id="rBtn" type="button">rock</button>
+        <button id="pBtn" type="button">paper</button>
+        <button id="sBtn" type="button">scissors</button>
+      </div>
     </div>
   </div>
-  <footer id="footer">
-
+  <footer>
+    <p>This page was made by Rolis for TOP project!</p>
   </footer>
 </body>
 
