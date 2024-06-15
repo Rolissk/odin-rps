@@ -15,19 +15,19 @@
   </header>
   <div id="content">
     <div id="middleContent">
-      <h1>Rock Paper Scissors</h1>
-      <h3>This is a game of Rock Paper Scissors!</h3>
-      <p>Rules are simple! Pick one of three options.</p>
-      <p>Rock beats Scissors, Paper beats Rock and Scissors beat Paper!</p>
+      <h1 class="info">Rock Paper Scissors</h1>
+      <h3 class="info">This is a game of Rock Paper Scissors!</h3>
+      <p class="info">Rules are simple! Pick one of three options. First to 5 points - wins!</p>
+      <p class="info">Rock beats Scissors, Paper beats Rock and Scissors beat Paper!</p>
       <div id="pickBox">
         <div id="scoreBox">
-          <span id="plScore">You: 0 </span>
+          <span id="plScore">Player: 0 </span>
           <span id="compScore">Computer: 0</span>
         </div>
         <div id="imageBox">
-          <div id="playerPic" class="pickImage"><img src=./images/questionMark.png alt="Question mark"></div>
+          <div class="pickImage"><img id="playerPic" src=./images/questionMark.png alt="Question mark"></div>
           <p id="countDown">VS</p>
-          <div id="compPic" class="pickImage"><img src=./images/questionMark.png alt="Question mark"></div>
+          <div class="pickImage"><img id="compPic" src=./images/questionMark.png alt="Question mark"></div>
           <!--Pics of player and computer choices with VS in between and when player picks
       then a countdown from 3 begins and on 0 computers choice is revealed -->
         </div>
@@ -37,7 +37,17 @@
         <button id="pBtn" type="button">paper</button>
         <button id="sBtn" type="button">scissors</button>
       </div>
+      <div id="resetBox">
+        <button id="reset" type="button">Restart</button>
+      </div>
     </div>
+  </div>
+  <div id="myModal" class="modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <p id="winText">Text to be added!</p>
+    </div>
+
   </div>
   <footer>
     <p>This page was made by Rolis for TOP project!</p>
